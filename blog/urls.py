@@ -14,4 +14,5 @@ urlpatterns = [
     path('tag/<tag_slug>/', views.post_list, name='post_list_by_tag'),
     # re_path(r'^tag/(?P<tag_slug>[ㄱ-힣a-zA-Z0-9_]+)/$', views.post_list, name='post_list_by_tag'),
     path('feed/', LatestPostsFeed(), name='post_feed'),
+    path('search/', views.post_search, name='post_search'),
 ]
