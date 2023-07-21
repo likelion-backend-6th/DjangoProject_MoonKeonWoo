@@ -1,5 +1,6 @@
 from django.urls import path, re_path
 from . import views
+from .feeds import LatestPostsFeed
 
 app_name = 'blog'
 
@@ -12,4 +13,5 @@ urlpatterns = [
     path('<int:post_id>/comment/', views.post_comment, name='post_comment'),
     path('tag/<tag_slug>/', views.post_list, name='post_list_by_tag'),
     # re_path(r'^tag/(?P<tag_slug>[ㄱ-힣a-zA-Z0-9_]+)/$', views.post_list, name='post_list_by_tag'),
+    path('feed/', LatestPostsFeed(), name='post_feed'),
 ]
